@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">New Dance Organization</h1>
+    <div class="col-6 offset-3">
+        <form action="/danceOrganizations" method="POST"novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="danceOrganization[title]"required>
+            <div class="valid-feedback">valid</div>
+            
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="danceOrganization[location]"required>
+                <div class="valid-feedback">valid</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="danceOrganization[image]"required>
+                <div class="valid-feedback">valid</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Ticket Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="danceOrganization[price]"required>
+                        <div class="valid-feedback">valid</div>
+                    </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="danceOrganization[description]"required></textarea>
+                <div class="valid-feedback">valid</div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Dance Organization</button>
+            </div>
+        </form>
+        <a href="/danceOrganizations">All Dance Organizations</a>
+    </div>
+</div>
