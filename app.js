@@ -58,10 +58,9 @@ app.get('/danceOrganizations/new', (req, res) => {
     res.render('danceOrganizations/new');
 })
 
-
 app.post('/danceOrganizations', validateDanceOrganization, catchAsync(async (req, res, next) => {
-    // if (!req.body.danceOrganization) throw new ExpressError('Invalid danceOrganization Data', 400);
-    const danceOrganization = new danceOrganization(req.body.danceOrganization);
+    // if (!req.body.campground) throw new ExpressError('Invalid Campground Data', 400);
+    const danceOrganization = new DanceOrganization(req.body.campground);
     await danceOrganization.save();
     res.redirect(`/danceOrganizations/${danceOrganization._id}`)
 }))
